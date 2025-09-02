@@ -1,0 +1,30 @@
+# Checklist – Unity 6000.0.35f1 + URP + Quest 2
+
+- [ ] Build Settings → **Android**; add suas **Scenes In Build**.
+- [ ] Packages: **OpenXR**, **XR Interaction Toolkit** (Samples/Starter Assets), **XR Device Simulator**.
+- [ ] OpenXR → **Meta/Quest Touch Controller Profile** ativo (Android e Windows).
+- [ ] OpenXR (Android) → **Meta Quest Support** ligado; rodar **Project Validation → Fix All**.
+- [ ] Input System ativo (Project Settings → Player → Active Input Handling = **Input System**).
+- [ ] Quality:
+  - [ ] **PC** usa `URP_PC.asset`
+  - [ ] **Mobile** usa `URP_Mobile.asset`
+- [ ] Graphics → **Set Default Render Pipeline Asset** = `URP_PC.asset`.
+- [ ] Graphics → **Pipeline Specific Settings → Default Profile** = `Vol_GlobalDefault.profile`.
+- [ ] Android Player Settings:
+  - [ ] **Company/Product/Package** (ex.: `com.suaempresa.anima`)
+  - [ ] **Scripting Backend** = **IL2CPP**
+  - [ ] **Target Architectures** = **ARM64** (desmarcar ARMv7)
+  - [ ] **Minimum API Level** ≥ **Android 10 (API 29)**
+  - [ ] **Graphics APIs**: **OpenGLES3** (testar Vulkan depois)
+  - [ ] **Color Space**: **Linear**
+  - [ ] **Internet Access** se precisar de rede
+  - [ ] **Orientation**: Landscape Left
+- [ ] Cena base:
+  - [ ] Remover Main Camera; adicionar **XR Origin (Action-based)**
+  - [ ] **XR Interaction Manager** presente
+  - [ ] **Event System** com **XRUIInputModule** (Canvas World-Space com **TrackedDeviceGraphicRaycaster**)
+  - [ ] Piso com **Teleportation Area** (se usar teleporte)
+  - [ ] Itens pegáveis: Collider + Rigidbody + **XR Grab Interactable**
+- [ ] URP assets organizados (ex.: `Assets/Config/URP` e `Assets/Config/Volumes`)
+- [ ] Teste no Editor com **XR Device Simulator**
+- [ ] Para build no headset: Quest 2 em **Developer Mode**, USB conectado, **Build & Run**.

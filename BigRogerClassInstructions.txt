@@ -1,0 +1,37 @@
+Criando quase do zero:
+
+1-Criar projeto 3D URP
+2-No Build Profile, mudar o projeto para Android
+3-No Package Manager Importar os Packages (estão no Registry):
+	a) OpenXR Plugin
+		No Project Settings, XR Plug-in Mangement, marcar o OpenXR (em Windows e Android)
+		No mesmo local, no OpenXR, inclua em Enabled Interaction Profiles, Meta Quest Touch Pro Controller  Profiles (Windows e Android). No Android, habilite Meta Quest Support 
+		Em Project Validation, mande fixar todos os problemas (Windows e Android), pode demorar um pouco.
+		Ainda em Project Settings, em Player (está no lado esquerdo da janela), você verá do lado direito Other Settings, mudo o item Active Input Handling para Input System Package. O projeto irá fechar e abrir automaticamente.
+		Nesse ponto, o projeto já está configurado, mas você teria que criar todas as interações do zero, o que é inviável para o projeto do módulo.
+	b) XR Interaction Toolkit
+		Importar de Samples o Starter Assets - é uma cena que tem vários tipos de interação
+		Importar XR Device Simulator, ele serve para testar o VR sem os óculos e o controle
+
+	
+
+
+Montando uma cena nova:
+
+- Apague a Main Camera e Insira um prefab XR Origin (XR Rig)
+- Crie um objeto vazio, nomeie de XR Interaction Manager (ou qualquer outro nome que queira) e insira o componente XRInteractionManager
+- Em GameObject->UI, selecione Event System
+	Remova o componente Input System UI Input Module (Script)
+	Acidione o componente XRUIInputModule (copie as configurações da cena DemoScene, é mais rápido).
+
+-Crie um plano para podermos caminhar. Caso queira habilitar o teleport, coloque neste plano o componente TeleportationArea, e nele em Interaction Layer Mask selecione Teleport	
+
+-Para criar botões, primeiro colocar um Canvas, com Render Mode World Space. Em seguida, para Event Camera, arraste a camera do XR Origin.
+	Adicione no canvas o componente TrackedDeviceGraphicRaycaster
+	Mude a escala do Canvas (tente com 0.002 em X,Y e Z)
+	Insira um botão no Canvas, e crie alguma interação utilizando o botão. Ele funciona como um botão qualquer
+
+-Para pegar um objeto, crie um cilindro, configure a escala para o tamanho desejado e coloque um componente RigidBody
+	-Adicione o componente XRGrabInteractable. Defina o ponto onde o cilindro vai ser "agarrado". Pode ser criado um objeto filho só com transform. Coloque este objeto no campo Attach Transform (pode ser dois). Selecione o tipo de Far Attach Mode (Near faz ele grudar no controle)
+	-Se você quiser que o objeto faça algo ao pressionar o gatilho, coloque no evento Activeted do XRGrabInteractable
+	
