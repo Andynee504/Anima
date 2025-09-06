@@ -24,7 +24,7 @@ Montando uma cena nova:
 	Remova o componente Input System UI Input Module (Script)
 	Acidione o componente XRUIInputModule (copie as configurações da cena DemoScene, é mais rápido).
 
--Crie um plano para podermos caminhar. Caso queira habilitar o teleport, coloque neste plano o componente TeleportationArea, e nele em Interaction Layer Mask selecione Teleport	
+-Crie um plano para podermos caminhar. Caso queira habilitar o teleport, coloque neste plano o componente TeleportationArea, e nele em Interaction Layer Mask selecione Teleport
 
 -Para criar botões, primeiro colocar um Canvas, com Render Mode World Space. Em seguida, para Event Camera, arraste a camera do XR Origin.
 	Adicione no canvas o componente TrackedDeviceGraphicRaycaster
