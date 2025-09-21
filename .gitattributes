@@ -9,6 +9,7 @@
 *.controller    text eol=lf
 *.overrideController text eol=lf
 *.mat           text eol=lf
+*.asset  merge=unityyamlmerge text eol=lf
 
 # LFS para arquivos grandes (ajuste conforme uso)
 *.psd  filter=lfs diff=lfs merge=lfs -text
