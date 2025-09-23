@@ -43,14 +43,14 @@ REM If there are local changes, offer autostash
 if not "%ANY%"=="0" (
   echo.
   echo [ATENCAO] Existem mudancas locais nao aplicadas.
-  echo Deseja usar --autostash para guardar temporariamente? (S/N)
+  echo Deseja usar --autostash para guardar temporariamente? ^(S/N^)
   set "ANS="
   set /p "ANS=> "
   if /I "%ANS%"=="S" (
     set "PULLCMD=%PULLCMD% --autostash"
   ) else (
     echo.
-    echo [DICA] Voce pode commitar, stashear (git stash) ou responder S para autostash.
+    echo [DICA] Voce pode commitar, stashear ^(git stash^) ou responder S para autostash.
   )
 )
 
