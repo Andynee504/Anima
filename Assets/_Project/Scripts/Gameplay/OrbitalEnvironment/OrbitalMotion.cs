@@ -8,14 +8,14 @@ public class OrbitalMotion : MonoBehaviour
 {
     [Header("Orbit")]
     public Transform center;
-    public float radius = 10f;                 // meters
-    public float angularSpeedDeg = 20f;        // degrees/second
-    public Vector3 axis = Vector3.up;          // orbit axis (usually up)
-    public float bobAmplitude = 0.3f;          // vertical float
-    public float bobFrequency = 0.2f;          // Hz
+    public float radius = 10f; // meters
+    public float angularSpeedDeg = 20f; // degrees/second
+    public Vector3 axis = Vector3.up; // orbit axis (usually up)
+    public float bobAmplitude = 0.3f; // vertical float
+    public float bobFrequency = 0.2f; // Hz
 
     [Header("Despawn")]
-    public float despawnDistance = 60f;        // distance from center to destroy
+    public float despawnDistance = 60f; // distance from center to destroy
 
     [Header("Recapture (optional)")]
     public bool recaptureWhenNear = true;
@@ -26,8 +26,8 @@ public class OrbitalMotion : MonoBehaviour
 
     Rigidbody rb;
     XRGrabInteractable grab;
-    float angleDeg;     // current angle along orbit
-    float bobPhase;     // for per-instance bobbing
+    float angleDeg; // current angle along orbit
+    float bobPhase; // for per-instance bobbing
     bool orbitEnabled = true;
 
     // Read group multiplier from manager (defaults to 1)

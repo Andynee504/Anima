@@ -497,6 +497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Device Simulator
       objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -539,10 +543,10 @@ MonoBehaviour:
   - {fileID: 8653924556134282625}
   weights: 1b0000001b0000001b000000
   targetCount: 81
-  radiusRange: {x: 40, y: 40}
+  radiusRange: {x: 40, y: 20}
   speedDegRange: {x: 10, y: 28}
   despawnDistance: 60
-  spawnMinAngleFromViewDeg: 70
+  spawnMinAngleFromViewDeg: 150
   SpeedMultiplier: 0.15
 --- !u!4 &225919017
 Transform:
@@ -1097,6 +1101,32 @@ Transform:
   - {fileID: 1286535378}
   m_Father: {fileID: 1245089142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &660642371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 869080198836176715, guid: 8ff5eee57e1d9ad43b85d8505248f435, type: 3}
+  m_PrefabInstance: {fileID: 30755569383795039}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &660642373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660642371}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013050408, y: 0.005041362, z: 0.0010853393}
+  m_Center: {x: 0, y: 0, z: 0.0002396213}
 --- !u!64 &720003843
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3140,7 +3170,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 869080198836176715, guid: 8ff5eee57e1d9ad43b85d8505248f435, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 660642373}
   m_SourcePrefab: {fileID: 100100000, guid: 8ff5eee57e1d9ad43b85d8505248f435, type: 3}
 --- !u!4 &30755569383795040 stripped
 Transform:
@@ -4571,7 +4604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 1437807538}
-  radius: 10
+  radius: 40
   angularSpeedDeg: 20
   axis: {x: 0, y: 1, z: 0}
   bobAmplitude: 0.3
@@ -4951,7 +4984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 1437807538}
-  radius: 10
+  radius: 40
   angularSpeedDeg: 20
   axis: {x: 0, y: 1, z: 0}
   bobAmplitude: 0.3
@@ -5332,7 +5365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153982007679157697, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_EnableStrafe
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 758862941726224967, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_InteractionManager
@@ -5342,6 +5375,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 3127728407676174906}
+    - target: {fileID: 942810691211101373, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_StartingInteractionOverridesMap.Array.data[0].overrideGroupMembers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
@@ -5835,7 +5872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 1437807538}
-  radius: 10
+  radius: 40
   angularSpeedDeg: 20
   axis: {x: 0, y: 1, z: 0}
   bobAmplitude: 0.3

@@ -18,7 +18,7 @@ public class OrbitManager : MonoBehaviour
     public Vector2 radiusRange = new Vector2(8f, 14f);
     public Vector2 speedDegRange = new Vector2(10f, 28f);
     public float despawnDistance = 60f;
-    public float spawnMinAngleFromViewDeg = 70f; // > FOV/2 is safe
+    public float spawnMinAngleFromViewDeg = 60f; // > FOV/2 is safe
 
     [Header("Speed Control")]
     [Range(0.05f, 5f)] public float SpeedMultiplier = 1f;
@@ -116,7 +116,7 @@ public class OrbitManager : MonoBehaviour
         // Camera forward angle relative to baseDir
         float camAngle = Vector3.SignedAngle(baseDir, planeFwd, axis);
 
-        // Spawn behind camera: add 180 ± jitter, and also ensure out-of-view margin
+        // Spawn behind camera -> add 180 ± jitter, and also ensure out-of-view margin
         float jitter = Random.Range(-30f, 30f);
         float desired = camAngle + 180f + jitter;
 
