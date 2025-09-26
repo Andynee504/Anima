@@ -1,0 +1,1 @@
+D:\Imersao\Unity\Anima\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\5ti502sz\obj\arm64-v8a
