@@ -8,8 +8,8 @@ public class OrbitManager : MonoBehaviour
     public Camera xrCamera;
 
     [Header("Prefabs & Weights")]
-    public OrbitalMotion[] orbiterPrefabs; // variações
-    public int[] weights;                  // opcional (ex.: 50,30,20)
+    public OrbitalMotion[] orbiterPrefabs; // variacoes
+    public int[] weights; // opcional (ex.: 50,30,20)
 
     [Header("Pool / Counts")]
     public int targetCount = 8;
@@ -29,7 +29,10 @@ public class OrbitManager : MonoBehaviour
     [Range(0.05f, 5f)] public float SpeedMultiplier = 1f;
 
     [Header("Visibility")]
-    public bool pauseWhenHidden = true;   // pausa órbita quando esconder via SetAllVisible
+    public bool pauseWhenHidden = true; // pausa orbita quando esconder via SetAllVisible
+
+    [Header("Extra participants")]
+    public OrbitalMotion[] alsoAffect;
 
     readonly List<OrbitalMotion> actives = new();
 
@@ -43,13 +46,20 @@ public class OrbitManager : MonoBehaviour
         // primeira leva: distribuído (sem spawn-out-of-view)
         SpawnDistributed(targetCount);
 
-        // Garante estado inicial oculto (caso sua sala de visibilidade ainda não tenha rodado)
+        // Garante estado inicial oculto (caso a sala de visibilidade ainda nao tenha rodado)
         SetAllVisible(false, disableCollisionToo: true, fadeSeconds: 0f);
+        if (alsoAffect != null)
+        {
+            foreach (var extra in alsoAffect)
+            {
+                if (extra) extra.SetPresentationVisible(false, true, 0f);
+            }
+        }
     }
 
     void Update()
     {
-        // mantém a população estável
+        // mantem a populacao estavel
         if (actives.Count < targetCount)
         {
             int diff = targetCount - actives.Count;
@@ -73,7 +83,7 @@ public class OrbitManager : MonoBehaviour
     {
         if (!spherical || ringCount <= 1)
         {
-            // anel único
+            // anel unico
             for (int i = 0; i < count; i++)
             {
                 var prefab = PickPrefab();
@@ -85,10 +95,10 @@ public class OrbitManager : MonoBehaviour
                 var inst = Instantiate(prefab);
                 inst.name = $"{prefab.name}_orbiter";
 
-                // já nasce invisível (sem colisão, sem grab)
+                // ja nasce invisivel (sem colisao, sem grab)
                 inst.SetPresentationVisible(false, disableCollisionToo: true, fadeSeconds: 0f);
 
-                // garanta que NÃO vai sobrescrever o eixo no Init
+                // garantir que NAO vai sobrescrever o eixo no Init
                 inst.randomizeAxisOnInit = false;
                 inst.axis = Random.onUnitSphere.normalized;
 
@@ -98,17 +108,17 @@ public class OrbitManager : MonoBehaviour
             return;
         }
 
-        // “esfera” — divide em vários anéis com eixos variados
+        // “esfera” — divide em varios aneis com eixos variados
         int perRing = Mathf.CeilToInt(count / (float)ringCount);
         int spawned = 0;
 
         for (int r = 0; r < ringCount && spawned < count; r++)
         {
             // eixo do anel r (quase uniforme via “Fibonacci sphere”)
-            float k = (r + 0.5f) / ringCount;     // 0..1
-            float cos = 1f - 2f * k;              // -1..1
+            float k = (r + 0.5f) / ringCount; // 0..1
+            float cos = 1f - 2f * k; // -1..1
             float sin = Mathf.Sqrt(Mathf.Max(0f, 1f - cos * cos));
-            float phi = r * 2.39996323f;          // ~137.5°
+            float phi = r * 2.39996323f; // ~137.5°
             Vector3 ringAxis = new Vector3(Mathf.Cos(phi) * sin, cos, Mathf.Sin(phi) * sin).normalized;
             if (ringAxis.sqrMagnitude < 1e-4f) ringAxis = Vector3.up;
 
@@ -124,11 +134,11 @@ public class OrbitManager : MonoBehaviour
                 var inst = Instantiate(prefab);
                 inst.name = $"{prefab.name}_orbiter";
 
-                // já nasce invisível
+                // ja nasce invisivel
                 inst.SetPresentationVisible(false, disableCollisionToo: true, fadeSeconds: 0f);
 
-                inst.randomizeAxisOnInit = false; // não sobrescrever no Init
-                inst.axis = ringAxis;             // usa o eixo do anel
+                inst.randomizeAxisOnInit = false; // nao sobrescrever no Init
+                inst.axis = ringAxis; // usa o eixo do anel
 
                 inst.InitFromManager(this, center, angleDeg, radius, speedDeg, despawnDistance);
                 actives.Add(inst);
@@ -147,10 +157,10 @@ public class OrbitManager : MonoBehaviour
         var inst = Instantiate(prefab);
         inst.name = $"{prefab.name}_orbiter";
 
-        // já nasce invisível
+        // ja nasce invisivel
         inst.SetPresentationVisible(false, disableCollisionToo: true, fadeSeconds: 0f);
 
-        inst.randomizeAxisOnInit = false; // não sobrescrever no Init
+        inst.randomizeAxisOnInit = false; // nao sobrescrever no Init
 
         if (spherical)
         {
@@ -173,7 +183,7 @@ public class OrbitManager : MonoBehaviour
     {
         if (pauseWhenHidden)
         {
-            // zera a velocidade global quando oculto; retoma (>=1) quando visível
+            // zera a velocidade global quando oculto; retoma (>=1) quando visivel
             SpeedMultiplier = visible ? Mathf.Max(SpeedMultiplier, 1f) : 0f;
         }
 
@@ -182,6 +192,11 @@ public class OrbitManager : MonoBehaviour
             var o = actives[i];
             if (!o) continue;
             o.SetPresentationVisible(visible, disableCollisionToo, fadeSeconds);
+        }
+        if (alsoAffect != null)
+        {
+            foreach (var extra in alsoAffect)
+                if (extra) extra.SetPresentationVisible(visible, disableCollisionToo, fadeSeconds);
         }
     }
 
@@ -211,7 +226,7 @@ public class OrbitManager : MonoBehaviour
 
     float PickAngleOutOfView()
     {
-        // projeta o forward da câmera no plano Y (assumindo up global)
+        // projeta o forward da camera no plano Y (assumindo up global)
         Vector3 axis = Vector3.up;
         Vector3 camFwd = xrCamera.transform.forward;
         Vector3 planeFwd = Vector3.ProjectOnPlane(camFwd, axis).normalized;
