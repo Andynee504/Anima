@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3c0cc990804b747bdcd7abda51fdac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 5496044504655228637}
+  door: {fileID: 6308215962460893852}
   lockSeconds: 60
   actorLayers:
     serializedVersion: 2
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3c0cc990804b747bdcd7abda51fdac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 5496044504655228637}
+  door: {fileID: 6690227349240740483}
   lockSeconds: 60
   actorLayers:
     serializedVersion: 2

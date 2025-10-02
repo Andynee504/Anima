@@ -1568,6 +1568,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7599128716322146749, guid: 0fae8af0ffffeed4d93c18636dbcafbe, type: 3}
   m_PrefabInstance: {fileID: 309040805}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &317279331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317279333}
+  - component: {fileID: 317279332}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &317279332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317279331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: edd240ebd995fc94ba1424b95f7b44af, type: 2}
+--- !u!4 &317279333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317279331}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.481527, y: 0.15, z: 118.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &349173203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2518,7 +2567,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479469369}
-  m_Mesh: {fileID: -7295861012036772146, guid: 7088a4cdbbbbfef4d87f9e969a2c4461, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: b01ba28aeabf5d24ab4dcdf1248b5f7d, type: 3}
 --- !u!1001 &502766080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5414,6 +5463,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1524949971391407066, guid: 47e6a75570ce696488a2f3717a94c6de, type: 3}
   m_PrefabInstance: {fileID: 612520494}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1112992097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6308215962460893852, guid: 6708e4f5e20f12241a902984cf6b0bd4, type: 3}
+  m_PrefabInstance: {fileID: 960011032370407535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb88a408b29c37c41b7d1b26dc6f8691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1119009598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6783,6 +6843,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9f365cf844c03449bc8973eead2c3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1615123232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6690227349240740483, guid: 6708e4f5e20f12241a902984cf6b0bd4, type: 3}
+  m_PrefabInstance: {fileID: 960011032370407535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb88a408b29c37c41b7d1b26dc6f8691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1618872720
@@ -8474,6 +8545,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 321562981517355125, guid: 6708e4f5e20f12241a902984cf6b0bd4, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1112992097}
+    - target: {fileID: 321562981517355125, guid: 6708e4f5e20f12241a902984cf6b0bd4, type: 3}
       propertyPath: actorLayers.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
@@ -8481,6 +8556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doors
       objectReference: {fileID: 0}
+    - target: {fileID: 1013598355833194940, guid: 6708e4f5e20f12241a902984cf6b0bd4, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1615123232}
     - target: {fileID: 1013598355833194940, guid: 6708e4f5e20f12241a902984cf6b0bd4, type: 3}
       propertyPath: actorLayers.m_Bits
       value: 4294967295
@@ -11410,7 +11489,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -11449,3 +11528,4 @@ SceneRoots:
   - {fileID: 170092767}
   - {fileID: 16542079}
   - {fileID: 1298846181}
+  - {fileID: 317279333}

@@ -297,15 +297,27 @@ public class OrbitalMotion : MonoBehaviour
 
     void ApplyAlphaToAll(float a)
     {
+        bool visible = a > 0.001f;
+
         for (int r = 0; r < _renderers.Length; r++)
         {
             var rend = _renderers[r];
-            var mats = rend.materials; // instancia materiais (cópia)
+            if (!rend) continue;
+
+            // Evita “piscar” no primeiro frame: oculta totalmente quando ~0
+            rend.enabled = visible;
+
+            // Instancia materiais deste renderer (cópia segura p/ editar)
+            var mats = rend.materials;
             for (int m = 0; m < mats.Length; m++)
             {
                 var mat = mats[m];
                 if (!mat) continue;
 
+                // 1) Shader novo: controla emissão e alpha via _Fade (0..1)
+                if (mat.HasProperty("_Fade")) mat.SetFloat("_Fade", a);
+
+                // 2) Compat: ainda escreve alpha na cor base para materiais antigos
                 if (mat.HasProperty("_BaseColor"))
                 {
                     var c = mat.GetColor("_BaseColor"); c.a = a; mat.SetColor("_BaseColor", c);
@@ -316,7 +328,7 @@ public class OrbitalMotion : MonoBehaviour
                 }
             }
         }
-        // Importante: para o fade funcionar, os materiais devem estar em modo Transparent/Fade.
+        // Observação: mantenha os materiais em modo Transparent/ Fade.
     }
 
     void OnDestroy()
