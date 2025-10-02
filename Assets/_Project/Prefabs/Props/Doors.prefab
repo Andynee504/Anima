@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 5496044504655228637}
-  lockSeconds: 60
+  lockSeconds: 30
   actorLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 6308215962460893852}
-  lockSeconds: 60
+  lockSeconds: 30
   actorLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 6690227349240740483}
-  lockSeconds: 60
+  lockSeconds: 30
   actorLayers:
     serializedVersion: 2
     m_Bits: 1
