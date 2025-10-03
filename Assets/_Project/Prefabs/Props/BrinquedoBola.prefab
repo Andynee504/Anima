@@ -141,10 +141,10 @@ MonoBehaviour:
   playWhileHeldLoop: 0
   playOnRelease: 0
   alsoOnActivate: 0
-  hoverEnterClip: {fileID: 0}
-  grabClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  hoverEnterClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  grabClip: {fileID: 8300000, guid: a20e91e7477c9b0478268678a4890464, type: 3}
   holdLoopClip: {fileID: 0}
-  releaseClip: {fileID: 0}
+  releaseClip: {fileID: 8300000, guid: a20e91e7477c9b0478268678a4890464, type: 3}
   mixerGroup: {fileID: -8706838937037072096, guid: 51abe02a54e16ff4fb06d6272c0e0253, type: 2}
   spatialize3D: 1
   volume: 1
