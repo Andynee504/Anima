@@ -8,6 +8,16 @@ public class FootstepManager : MonoBehaviour
     [SerializeField] InputActionReference moveAction; // Vector2 do locomotion
     [SerializeField, Range(0f, 1f)] float inputThreshold = 0.15f; // só considera "andar" acima disso
 
+    [SerializeField, Tooltip("Velocidade mínima real (m/s) para considerar caminhada.")]
+    float minSpeedForSteps = 0.20f;
+
+    [SerializeField, Tooltip("Distância mínima (m) acumulada antes de disparar um passo.")]
+    float minDistancePerStep = 0.25f;
+
+    [SerializeField, Tooltip("Quando parar, zera os timers para não estourar passo na retomada.")]
+    float stopResetSeconds = 0.20f;
+
+
     [Header("Perfis")]
     [SerializeField] FootstepProfile defaultProfile;
     FootstepProfile _activeProfile;

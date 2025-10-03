@@ -43,20 +43,24 @@ Material:
     - _DomeRadius: 5000
     - _Fade: 1
     - _GlintAmount: 1
-    - _GlintSpeed: 0
-    - _GlintsOn: 0
+    - _GlintSpeed: 2
+    - _GlintsOn: 1
     - _NebulaContrast: 3
-    - _NebulaIntensity: 1
-    - _NebulaOn: 0
-    - _NebulaScale: 1.39
+    - _NebulaIntensity: 0.061
+    - _NebulaOn: 1
+    - _NebulaScale: 0.2
     - _StarBrightness: 2
-    - _StarDensity: 1
+    - _StarBrightness2: 0.8
+    - _StarDensity: 0.018
+    - _StarDensity2: 0.018
     - _StarSize: 0.003
-    - _StarSoftness: 0.0018
-    - _StarTile: 1024
+    - _StarSize2: 0.0022
+    - _StarSoftness: 0.0015
+    - _StarTile: 64
+    - _StarTile2: 64
     - _StarsOn: 1
     - _TwinkleAmount: 1
-    - _TwinkleSpeed: 5
+    - _TwinkleSpeed: 3
     m_Colors:
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
