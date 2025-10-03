@@ -1,0 +1,17 @@
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\GAToUnityCallbacks.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\MacroEnd.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\MacroHeaderBegin.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\MacroSourceBegin.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAApplication.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAConfiguration.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGADebug.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAEvents.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAInput.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboard.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboardCallbacks.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGATypes.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UGAVersion.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UnityToGACallbacks.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UnityToGAConfigurationCallbacks.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UnityToGAKeyEventCallbacks.h
+D:\Imersao\Unity\Anima\Library\PramData\AndroidApplicationController\Cache\com.UnityTechnologies.com.unity.template.urpblank\gradle-project\unityLibrary\src\main\cpp\GameActivity\UnityToGAMotionEventCallbacks.h
